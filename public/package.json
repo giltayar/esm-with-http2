@@ -4,7 +4,7 @@
   "description": "",
   "main": "es6-module-1.js",
   "scripts": {
-    "build": "webpack --entry ./es6-module-1.js  --output-filename dist/bundle.js --output-library itWorks"
+    "build": "webpack --entry ./es6-module-1.js  --output-filename dist/bundle.js --output-library itWorks --verbose >dist/webpack-output.txt && node scripts/create-es6-modules-simulation.js"
   },
   "author": "",
   "license": "ISC",
