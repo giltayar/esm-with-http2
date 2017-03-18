@@ -7,6 +7,14 @@
   <title>Document</title>
 </head>
 <body>
-  <h1>Hello, world</h1>
+  <script>
+    const $ = document.querySelector.bind(document)
+  </script>
+  <script type="module">
+    import itWorks from './es6-module-1.js'
+
+    $('#output').textContent = itWorks()
+  </script>
+  <h1 id="output">It doesn't work...</h1>
 </body>
 </html>
