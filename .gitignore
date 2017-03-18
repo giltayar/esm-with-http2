@@ -39,3 +39,6 @@ jspm_packages
 
 # Mine
 dist/
+server.crt
+server.csr
+server.key
