@@ -1,0 +1,34 @@
+{
+  "name": "esm-with-http2",
+  "version": "1.0.0",
+  "description": "Researching how ESM works with HTTP/2 and whether it can replace bundlers like Webpack",
+  "main": "index.js",
+  "scripts": {
+    "test": "standard",
+    "start": "cd 01-esm-with-http1 && node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/giltayar/esm-with-http2.git"
+  },
+  "keywords": [
+    "es2015",
+    "modules",
+    "http/2"
+  ],
+  "author": "Gil Tayar <gil@tayar.org>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/giltayar/esm-with-http2/issues"
+  },
+  "homepage": "https://github.com/giltayar/esm-with-http2#readme",
+  "dependencies": {
+    "express": "^4.15.2"
+  },
+  "devDependencies": {
+    "eslint": "^3.18.0",
+    "eslint-config-standard": "^7.1.0",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^2.1.1"
+  }
+}
