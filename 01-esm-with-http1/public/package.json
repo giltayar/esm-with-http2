@@ -1,0 +1,18 @@
+{
+  "name": "01-esm-with-http1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "es6-module-1.js",
+  "scripts": {
+    "build": "webpack --entry ./es6-module-1.js  --output-filename dist/bundle.js --output-library itWorks"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.4",
+    "lodash-es": "^4.17.4"
+  },
+  "devDependencies": {
+    "webpack": "^2.2.1"
+  }
+}
