@@ -16,4 +16,3 @@ spdy.createServer({
   key: fs.readFileSync(path.join(__dirname, 'server.key')),
   cert: fs.readFileSync(path.join(__dirname, 'server.crt'))
 }, app).listen(process.env.PORT || 3002, () => console.log('Listening on HTTP/2...'))
-

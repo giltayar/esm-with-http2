@@ -9,16 +9,43 @@ const builtLibraries = webpackOutputLines.filter(l => l.includes('built')).map(l
 const writeFileAsync = (name, content) =>
   new Promise((resolve, reject) => fs.writeFile(name, content, (err) => err ? reject(err) : resolve))
 
-const randomNumber = Math.floor(Math.random() * 10000)
+const randomNumber = () => Math.floor(Math.random() * 10000)
 
 builtLibraries.forEach(bl => writeFileAsync(path.join(__dirname, '../dist/simulation', bl), `
-var ${bl.split('.')[0]}${randomNumber} = ${Math.random()}
-function foo () {
-  for (var x = 0; x < Math.random(); ++x) {
-    doSomething();
+/**
+ * This method is like _.zip except that it accepts an array of grouped
+ * elements and creates an array regrouping the elements to their pre-zip
+ * configuration.
+ *
+ * @static
+ * @memberOf _
+ * @since 1.2.0
+ * @category Array
+ * @param {Array} array The array of grouped elements to process.
+ * @returns {Array} Returns the new array of regrouped elements.
+ * @example
+ *
+ * var zipped = _.zip(['a', 'b'], [1, 2], [true, false]);
+ * // => [['a', 1, true], ['b', 2, false]]
+ *
+ * _.unzip(zipped);
+ * // => [['a', 'b'], [1, 2], [true, false]]
+ */
+function unzip${randomNumber()}(array) {
+  if (!(array && array.length)) {
+    return [];
   }
-}
-`.repeat(50)))
+  var length = 0;
+  array = arrayFilter(array, function(group) {
+    if (isArrayLikeObject(group)) {
+      length = nativeMax(group.length, length);
+      return true;
+    }
+  });
+  return baseTimes(length, function(index) {
+    return arrayMap(array, baseProperty(index));
+  });
+}`.repeat(2)))
 
 fs.writeFileSync(path.join(__dirname, '../dist/es6-modules-simulation.html'), `
 <!DOCTYPE html>
