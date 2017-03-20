@@ -14,7 +14,11 @@ const readFileAsync = (name) =>
 
 builtLibraries.forEach(bl => readFileAsync(path.join(__dirname, '../node_modules/lodash-es', bl)).then(content =>
   writeFileAsync(path.join(__dirname, '../dist/simulation', bl),
-    content.replace(/export default/g, '').replace(/export/g, '').replace(/import .*;/g, ''))))
+    content
+      .replace(/export {.*;/g, '')
+      .replace(/export default/g, '')
+      .replace(/export/g, '')
+      .replace(/import .*;/g, ''))))
 
 fs.writeFileSync(path.join(__dirname, '../dist/es6-modules-simulation.html'), `
 <!DOCTYPE html>
