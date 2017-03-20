@@ -13,6 +13,6 @@ app.use('/', express.static(path.join(__dirname, 'public'), {maxAge: 1000 * 1000
 http.createServer(app).listen(3001, () => console.log('Listening on HTTP/1...'))
 
 spdy.createServer({
-  key: fs.readFileSync(path.join(__dirname, 'server.key')),
-  cert: fs.readFileSync(path.join(__dirname, 'server.crt'))
+  key: fs.readFileSync(path.join(__dirname, 'keys/server.key')),
+  cert: fs.readFileSync(path.join(__dirname, 'keys/server.crt'))
 }, app).listen(3002, () => console.log('Listening on HTTP/2...'))

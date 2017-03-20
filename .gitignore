@@ -38,6 +38,7 @@ jspm_packages
 
 
 # Mine
+keys/
 dist/
 server.crt
 server.csr
