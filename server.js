@@ -10,9 +10,9 @@ app.set('etag', false)
 
 app.use('/', express.static(path.join(__dirname, 'public'), {maxAge: 1000 * 1000 * 1000, etag: false}))
 
-http.createServer(app).listen(process.env.PORT || 3001, () => console.log('Listening on HTTP/1...'))
+http.createServer(app).listen(3001, () => console.log('Listening on HTTP/1...'))
 
 spdy.createServer({
   key: fs.readFileSync(path.join(__dirname, 'server.key')),
   cert: fs.readFileSync(path.join(__dirname, 'server.crt'))
-}, app).listen(process.env.PORT || 3002, () => console.log('Listening on HTTP/2...'))
+}, app).listen(3002, () => console.log('Listening on HTTP/2...'))
