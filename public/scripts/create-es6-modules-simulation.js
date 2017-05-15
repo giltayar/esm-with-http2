@@ -37,12 +37,16 @@ fs.writeFileSync(path.join(__dirname, '../dist/es6-modules-simulation.html'), `
   <div><a href="../es6-modules.html">es6 modules</a></div>
   <div><a href="../webpack-modules.html">webpack modules</a></div>
   <div><a href="es6-modules-simulation.html">es6 modules simulation</a></div>
+  <script>
+    console.time('benchmark')
+  </script>
 
   ${
     builtLibraries.map(bl => `<script src="simulation/${bl}"></script>`).join('\n')
   }
   <script>
     $('#output').textContent = 'It works perfectly!'
+    console.timeEnd('benchmark')
   </script>
 </body>
 </html>
